@@ -48,7 +48,6 @@ export const GlobalState: FC<GlobalStateProps> = ({ children }) => {
   const [presets, setPresets] = useState<Tables<"presets">[]>([])
   const [prompts, setPrompts] = useState<Tables<"prompts">[]>([])
   const [tools, setTools] = useState<Tables<"tools">[]>([])
-  const [platformTools, setPlatformTools] = useState<Tables<"tools">[]>([])
   const [workspaces, setWorkspaces] = useState<Tables<"workspaces">[]>([])
 
   // MODELS STORE
@@ -224,8 +223,6 @@ export const GlobalState: FC<GlobalStateProps> = ({ children }) => {
         setPrompts,
         tools,
         setTools,
-        platformTools,
-        setPlatformTools,
         workspaces,
         setWorkspaces,
 

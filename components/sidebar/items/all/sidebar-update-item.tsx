@@ -112,7 +112,6 @@ export const SidebarUpdateItem: FC<SidebarUpdateItemProps> = ({
     setCollections,
     setAssistants,
     setTools,
-    setPlatformTools,
     setModels,
     setAssistantImages
   } = useContext(ChatbotUIContext)
@@ -197,7 +196,6 @@ export const SidebarUpdateItem: FC<SidebarUpdateItemProps> = ({
       setSelectedAssistantTools
     },
     tools: null,
-    platformTools: null,
     models: null
   }
 
@@ -581,7 +579,6 @@ export const SidebarUpdateItem: FC<SidebarUpdateItemProps> = ({
     collections: setCollections,
     assistants: setAssistants,
     tools: setTools,
-    platformTools: setPlatformTools,
     models: setModels
   }
 

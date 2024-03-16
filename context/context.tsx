@@ -36,8 +36,6 @@ interface ChatbotUIContext {
   setPrompts: Dispatch<SetStateAction<Tables<"prompts">[]>>
   tools: Tables<"tools">[]
   setTools: Dispatch<SetStateAction<Tables<"tools">[]>>
-  platformTools: Tables<"tools">[]
-  setPlatformTools: Dispatch<SetStateAction<Tables<"tools">[]>>
   workspaces: Tables<"workspaces">[]
   setWorkspaces: Dispatch<SetStateAction<Tables<"workspaces">[]>>
 
@@ -164,8 +162,6 @@ export const ChatbotUIContext = createContext<ChatbotUIContext>({
   setPrompts: () => {},
   tools: [],
   setTools: () => {},
-  platformTools: [],
-  setPlatformTools: () => {},
   workspaces: [],
   setWorkspaces: () => {},
 

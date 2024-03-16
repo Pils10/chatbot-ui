@@ -41,7 +41,6 @@ export const SidebarDataList: FC<SidebarDataListProps> = ({
     setCollections,
     setAssistants,
     setTools,
-    setPlatformTools,
     setModels
   } = useContext(ChatbotUIContext)
 
@@ -152,7 +151,6 @@ export const SidebarDataList: FC<SidebarDataListProps> = ({
     collections: setCollections,
     assistants: setAssistants,
     tools: setTools,
-    platformTools: setPlatformTools,
     models: setModels
   }
 
