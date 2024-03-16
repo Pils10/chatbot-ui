@@ -234,7 +234,7 @@ const AdvancedContent: FC<AdvancedContentProps> = ({
           }}
         >
           <SelectTrigger>
-            <SelectValue defaultValue="openai" />
+            <SelectValue defaultValue="local" />
           </SelectTrigger>
 
           <SelectContent>
@@ -242,8 +242,7 @@ const AdvancedContent: FC<AdvancedContentProps> = ({
               {profile?.use_azure_openai ? "Azure OpenAI" : "OpenAI"}
             </SelectItem>
 
-            {window.location.hostname === "localhost" && (
-              <SelectItem value="local">Local</SelectItem>
+            <SelectItem value="local"></SelectItem>
             )}
           </SelectContent>
         </Select>
