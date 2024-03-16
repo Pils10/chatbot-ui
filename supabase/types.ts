@@ -126,45 +126,6 @@ export interface Database {
           }
         ]
       }
-      assistant_platform_tools: {
-        Row: {
-          assistant_id: string
-          created_at: string
-          tool_id: string
-          updated_at: string | null
-          user_id: string
-        }
-        Insert: {
-          assistant_id: string
-          created_at?: string
-          tool_id: string
-          updated_at?: string | null
-          user_id: string
-        }
-        Update: {
-          assistant_id?: string
-          created_at?: string
-          tool_id?: string
-          updated_at?: string | null
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "assistant_platform_tools_assistant_id_fkey"
-            columns: ["assistant_id"]
-            isOneToOne: false
-            referencedRelation: "assistants"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "assistant_platform_tools_user_id_fkey"
-            columns: ["user_id"]
-            isOneToOne: false
-            referencedRelation: "users"
-            referencedColumns: ["id"]
-          }
-        ]
-      }
       assistant_tools: {
         Row: {
           assistant_id: string
@@ -607,6 +568,7 @@ export interface Database {
           created_at: string
           file_id: string
           id: string
+          level: number | null
           local_embedding: string | null
           openai_embedding: string | null
           sharing: string
@@ -619,6 +581,7 @@ export interface Database {
           created_at?: string
           file_id: string
           id?: string
+          level?: number | null
           local_embedding?: string | null
           openai_embedding?: string | null
           sharing?: string
@@ -631,6 +594,7 @@ export interface Database {
           created_at?: string
           file_id?: string
           id?: string
+          level?: number | null
           local_embedding?: string | null
           openai_embedding?: string | null
           sharing?: string
@@ -757,6 +721,36 @@ export interface Database {
             columns: ["user_id"]
             isOneToOne: false
             referencedRelation: "users"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
+      files_raptor: {
+        Row: {
+          child_chunk_id: string
+          parent_chunk_id: string
+        }
+        Insert: {
+          child_chunk_id: string
+          parent_chunk_id: string
+        }
+        Update: {
+          child_chunk_id?: string
+          parent_chunk_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "files_raptor_child_chunk_id_fkey"
+            columns: ["child_chunk_id"]
+            isOneToOne: false
+            referencedRelation: "file_items"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "files_raptor_parent_chunk_id_fkey"
+            columns: ["parent_chunk_id"]
+            isOneToOne: false
+            referencedRelation: "file_items"
             referencedColumns: ["id"]
           }
         ]

@@ -9,7 +9,6 @@ interface ToolPickerProps {}
 export const ToolPicker: FC<ToolPickerProps> = ({}) => {
   const {
     tools,
-    platformTools,
     focusTool,
     toolCommand,
     isToolPickerOpen,
@@ -26,9 +25,7 @@ export const ToolPicker: FC<ToolPickerProps> = ({}) => {
     }
   }, [focusTool])
 
-  const allTools = [...tools, ...platformTools]
-
-  const filteredTools = allTools.filter(tool =>
+  const filteredTools = tools.filter(tool =>
     tool.name.toLowerCase().includes(toolCommand.toLowerCase())
   )
 
