@@ -242,8 +242,9 @@ const AdvancedContent: FC<AdvancedContentProps> = ({
               {profile?.use_azure_openai ? "Azure OpenAI" : "OpenAI"}
             </SelectItem>
 
-            <SelectItem value="local"></SelectItem>
-            )}
+            <SelectItem value="local">local
+            </SelectItem>
+            
           </SelectContent>
         </Select>
       </div>
